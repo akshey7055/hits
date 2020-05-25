@@ -2197,10 +2197,10 @@ ul.icons {
   #cta .inner {
     position: relative;
     z-index: 3; }
-  @media screen and (max-width: 980px) {
+  /*@media screen and (max-width: 980px) {
     #cta {
       background-attachment: scroll; } }
-
+*/
 /* Footer */
 #footer {
   background-color: #111111;
