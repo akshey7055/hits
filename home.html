@@ -1,0 +1,754 @@
+<!DOCTYPE HTML>
+<!--
+   Industrious by TEMPLATED
+   templated.co @templatedco
+   Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+   -->
+<html>
+   <head>
+      <title>EasyBooks</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <meta name="description" content="" />
+      <meta name="keywords" content="" />
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="rel.css">
+      <link rel="stylesheet" href="price.css">
+      <link rel="stylesheet" href="assets/css/main.css" />
+      <style type="text/css">
+         .log1{background-color: white;
+         color: black;
+         border: 2px solid #4CAF50;
+         padding: 15px 32px;
+         text-align: center; 
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+         margin: 4px 2px;
+         cursor: pointer;
+         border-radius: 30%;
+         }
+         .log2{background-color: white;
+         color: black;
+         border: 2px solid #f44336;
+         padding: 15px 32px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+         margin: 4px 2px;
+         cursor: pointer;
+         border-radius: 30%;
+         }
+         .log1:hover{background-color: #4CAF50;
+         color: white;
+         border: 2px solid black;
+         padding: 15px 32px;
+         text-align: center; 
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+         margin: 4px 2px;
+         cursor: pointer;
+         border-radius: 20%;
+         }
+         .log2:hover{background-color: #f44336;
+         color: white;
+         border: 2px solid black;
+         padding: 15px 32px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+         margin: 4px 2px;
+         cursor: pointer;
+         border-radius: 20%;
+         }
+         .float-class{
+         padding: 0;
+         margin: 0;
+         }
+         .float {
+         position: fixed;
+         width: 60px;
+         height: 60px;
+         bottom: 40px;
+         right: 40px;
+         background-color: none;
+         text-align: center;}
+         .my-float {
+         margin-top: 22px;
+         }
+         .map-responsive{
+         overflow:hidden;
+         padding-bottom:56.25%;
+         position:relative;
+         height:0;
+         }
+         .map-responsive iframe{
+         left:0;
+         top:0;
+         height:100%;
+         width:100%;
+         position:absolute;
+         }
+         .anim {
+         width: 100%;
+         height: 100%;
+         text-align:center;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         }
+         .anim-book {
+         transform-style: preserve-3d;
+         position: relative;
+         height: 230px;
+         cursor: pointer;
+         backface-visibility: visible;
+         }
+         .anim-front{
+         transform-style: preserve-3d;
+         position: absolute;
+         width: 155px;
+         height: 100%;
+         top: 0; left: 0;
+         transform-origin: left center;
+         border-bottom-right-radius: .5em;
+         border-top-right-radius: .5em;
+         transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+         background: black;
+         animation-name: front;
+         animation-duration: 3s;
+         animation-iteration-count: infinite;
+         }
+         .anim-back {
+         border-bottom-right-radius: .5em;
+         border-top-right-radius: .5em;
+         transform-style: preserve-3d;
+         position: absolute;
+         width: 155px;
+         height: 100%;
+         top: 0; left: 0;
+         transform-origin: left center;
+         transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+         background: Black;
+         animation-name: back;
+         animation-duration: 3s;
+         animation-iteration-count: infinite;
+         }
+         .anim-page1 { 
+         transform-style: preserve-3d;
+         position: absolute;
+         border-bottom-right-radius: .5em;
+         border-top-right-radius: .5em;
+         width: 155px;
+         height: 100%;
+         top: 0; left: 0;
+         transform-origin: left center;
+         transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+         background: #efefef;
+         animation-name: example1;
+         animation-duration: 3s;
+         animation-iteration-count: infinite;
+         }
+         .anim-page2 {
+         border-bottom-right-radius: .5em;
+         border-top-right-radius: .5em;
+         transform-style: preserve-3d;
+         position: absolute;
+         width: 155px;
+         height: 100%;
+         top: 0; left: 0;
+         transform-origin: left center;
+         transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+         background: #efefef;
+         animation-name: example2;
+         animation-duration: 3s;
+         animation-iteration-count: infinite;
+         }
+         .anim-page3 {
+         transform-style: preserve-3d;
+         border-bottom-right-radius: .5em;
+         border-top-right-radius: .5em;
+         position: absolute;
+         width: 155px;
+         height: 100%;
+         top: 0; left: 0;
+         transform-origin: left center;
+         transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+         background: #f5f5f5;
+         animation-name: example3;
+         animation-duration: 3s;
+         animation-iteration-count: infinite;
+         }
+         .anim-page4 {
+         border-bottom-right-radius: .5em;
+         border-top-right-radius: .5em;
+         transform-style: preserve-3d;
+         position: absolute;
+         width: 155px;
+         height: 100%;
+         top: 0; left: 0;
+         transform-origin: left center;
+         transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+         background: #f5f5f5;
+         animation-name: example4;
+         animation-duration: 3s;
+         animation-iteration-count: infinite;
+         }
+         .anim-page5 {
+         transform-style: preserve-3d;
+         border-bottom-right-radius: .5em;
+         border-top-right-radius: .5em;
+         position: absolute;
+         width: 155px;
+         height: 100%;
+         top: 0; left: 0;
+         transform-origin: left center;
+         transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+         background: #fafafa;
+         animation-name: example5;
+         animation-duration: 3s;
+         animation-iteration-count: infinite;
+         }
+         .anim-page6 {
+         border-bottom-right-radius: .5em;
+         border-top-right-radius: .5em;
+         transform-style: preserve-3d;
+         position: absolute;
+         width: 155px;
+         height: 100%;
+         top: 0; left: 0;
+         transform-origin: left center;
+         transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+         background: #fdfdfd;
+         animation-name: example6;
+         animation-duration: 3s;
+         animation-iteration-count: infinite;
+         }
+         @keyframes front {
+         from{
+         }
+         to{
+         transform: rotateY(-160deg) scale(1.1);
+         box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);  
+         }
+         }
+         @keyframes example1 {
+         from{
+         }
+         to{
+         transform: rotateY(-150deg) scale(1.1);
+         box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+         }
+         }
+         @keyframes example2 {
+         from{
+         }
+         to{
+         transform: rotateY(-30deg) scale(1.1);
+         box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+         }
+         }
+         @keyframes example3 {
+         from{
+         }
+         to{
+         transform: rotateY(-140deg) scale(1.1);
+         box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+         }
+         }
+         @keyframes example4 {
+         from{
+         }
+         to{
+         transform: rotateY(-40deg) scale(1.1);
+         box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+         }
+         }
+         @keyframes example5 {
+         from{
+         }
+         to{
+         transform: rotateY(-130deg) scale(1.1);
+         box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+         }
+         }
+         @keyframes example6 {
+         from{
+         }
+         to{
+         transform: rotateY(-50deg) scale(1.1);
+         box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+         }
+         }
+         @keyframes back {
+         from{
+         }
+         to{
+         transform: rotateY(-20deg) scale(1.1);
+         }
+         }
+      </style>
+   </head>
+   <body class="is-preload" onload="setTimeout(display, 25000);">
+      <!-- Header -->
+      <header id="header">
+         <a class="logo" href="#">Easybooks</a>
+         <nav>
+            </nav>
+         <nav>
+            <a href="#menu">Menu</a>
+         </nav>
+      </header>
+      <!-- Nav -->
+      <nav id="menu">
+         <ul class="links">
+            <li><a href="http://easybooks70.000webhostapp.com/dashboard/examples/dashboard2.php">DashBoard</a></li>
+            <li><a href="http://easybooks70.000webhostapp.com/dashboard/examples/profile2.php">Profile</a></li>
+			<li><a href="#contact">Contact Us</a></li>
+			<li><a href="#price">Price</a></li>	
+         </ul>
+      </nav>
+      <!-- Banner -->
+      <section id="banner">
+         <div class="inner">
+            <h1>EasyBooks</h1>
+            <p>Easybooks Is A Startup Which Aims To Provide Books To Students At Low Cost At Your Doorstep.<br />
+               This Website Is Designed By Akshey Arora And Devansh Kasera
+            </p>
+         </div>
+         <video autoplay loop muted playsinline src="easybooks.mp4"></video>
+      </section>
+      <!-- Highlights -->
+      <section class="wrapper">
+         <div class="inner">
+            <div class="anim">
+               <div class="anim-book">
+                  <div class="anim-back"></div>
+                  <div class="anim-page6">
+                     <h4>Books At Door, Knowledge At Core</h4>
+                  </div>
+                  <div class="anim-page5"></div>
+                  <div class="anim-page4"></div>
+                  <div class="anim-page3"></div>
+                  <div class="anim-page2"></div>
+                  <div class="anim-page1"></div>
+                  <div class="anim-front">
+                     <h4 style="text-align:center; color:white;">Easybooks  </h4>
+                  </div>
+               </div>
+            </div>
+            <br>
+            <br>
+            <b>
+               <div id="about">
+                  <h2 style="text-align:center">About Us</h2>
+            </b>
+            <p>We rent books, we also exchange books without additional cost. Our motive is not only to provide books but knowledge because students often require more than one book for a subject to grasp full knowledge of the subject and we do so by providing extra books at no additional cost. Check our prices and schemes for further knowledge.</p>
+            <div style="text-align:center">
+            <a href="#prices"><button class="button" ><span>Prices</span></button></a>
+            <button class="button" id="myBtn"><span>Contact Us </span></button>
+            </div>
+            </div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+               <!-- Modal content -->
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <span class="close">&times;</span>
+                     <h3>Contact Us </h3>
+                  </div>
+                  <div class="modal-body">
+                     <p>Call or Whatsapp - 7417660699 || 9837910699</p>
+                     <p>email - easybooks999@gmail.com</p>
+                  </div>
+                  <div class="modal-footer">
+                     <h5>We'll get back to you within 24 hours</h5>
+                  </div>
+               </div>
+            </div>
+            <br>
+            <hr style="width: 100%; text-align: right; margin-right: 0;">
+            <br>
+            <header class="special">
+               <h2><b>SERVICES</b></h2>
+               <p>What we offers</p>
+            </header>
+            <div class="highlights">
+               <section>
+                  <div class="content">
+                     <header>
+                        <a href="#" class="fa fa-truck" style="font-size:50px;"><span class="label"></span></a>
+                        <br>
+                        <br>
+                        <br>
+                        <h3>Door-to-Door Delivery </h3>
+                     </header>
+                     <hr style="width: 100%; text-align: right; margin-right: 0;">
+                     <p>Rent books at efficient cost</p>
+                  </div>
+               </section>
+               <section>
+                  <div class="content">
+                     <header>
+                        <a href="#" class="glyphicon glyphicon-ok " style="font-size:50px;"><span class="label"></span></a>
+                        <br>
+                        <br>
+                        <br>
+                        <h3>Availability</h3>
+                     </header>
+                     <hr style="width: 100%; text-align: right; margin-right: 0;">
+                     <p>Easy availability of all kind of academic books</p>
+                  </div>
+               </section>
+               <section>
+<div id="services">
+				<div class="content">
+                     <header>
+                        <a href="#" class="glyphicon  glyphicon-refresh " style="font-size:50px;"><span class="label"></span></a>
+                        <br>
+                        <br>
+                        <br>
+                        <h3>Quick Exchange</h3>
+                     </header>
+                     <hr style="width: 100%; text-align: right; margin-right: 0;">
+                     <p>Promised quick exchange and return</p>
+				  </div>
+					</div>
+               </section>
+               <section>
+                  <div class="content">
+                     <header>
+                        <a href="#" class="glyphicon  glyphicon-star " style="font-size:50px;"><span class="label"></span></a>
+                        <br>
+                        <br>
+                        <br>
+                        <h3>Special Offers</h3>
+                     </header>
+                     <hr style="width: 100%; text-align: right; margin-right: 0;">
+                     <p>Get discounted coupons of various outlets.</p>
+                  </div>
+               </section>
+               <section>
+                  <div class="content">
+                     <header>
+                        <a href="#" class="glyphicon glyphicon-leaf " style="font-size:50px;"><span class="label"></span></a>
+                        <br>
+                        <br>
+                        <br>
+                        <h3>24x7 Assistance</h3>
+                     </header>
+                     <hr style="width: 100%; text-align: right; margin-right: 0;">
+                     <p>Need any help? Call us anytime.</p>
+                  </div>
+               </section>
+               <section>
+                  <div class="content">
+                     <header>
+                        <a href="#" class="glyphicon glyphicon-book" style="font-size:50px;"><span class="label"></span></a>
+                        <br>
+                        <br>
+                        <br>
+                        <h3>Books</h3>
+                     </header>
+                     <hr style="width: 100%; text-align: right; margin-right: 0;">
+                     <p>Get unlimited books.</p>
+                  </div>
+               </section>
+            </div>
+    	</div>
+		</section>
+<!--
+		<br>
+	<br>
+	<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+-->	<!-- CTA -->
+      <section id="cta" class="wrapper">
+         <div class="inner">
+            <h2>We Believe That:</h2>
+            <p>'Books' are the store of knowledge and wisdom. They contain variety of pleasures. Reading books makes our mind strong and broaden our outlook. Reading of books gives us a great pleasure. They are the best friends of man.
+               Through books we come to know our civilization.Through books we come into contact with great scholars, poets and philosophers. Books never misguide us. They help us in building our character. By reading books our sadness is removed. If we are on a long journey, books give us a good company. Everyone, therefore, should develop the habit of reading books.
+            </p>
+         </div>
+      </section>
+      <div class="float-class">
+         <div class="float">
+            <a href="https://wa.me/919837910699" target="_blank"><img src="https://img.icons8.com/color/96/000000/whatsapp.png"></a>
+         </div>
+	  </div>
+	  <br>
+	  <h1 class="text-center" id="prices"> Prices </h1>
+	  <br>
+	  <div class="columns" id="price">
+		 <ul class="price">
+			<li class="header"  style="background-color:#4CAF50">Basic</li>
+			<li class="grey">₹ 2000/ 4 years</li>
+			<li>₹ 500/Sem</li>
+			<li>Unlimited Books</li>
+			<li>OLD/NEW Books</li>
+			<li>Free Exchange and Delivery*</li>
+		 </ul>
+	  </div>
+	  <div class="columns" >
+		 <ul class="price">
+			<li class="header" style="background-color:#4CAF50">Premium</li>
+			<li class="grey">₹ 4500/ 4 years</li>
+			<li>₹ 1000/Sem</li>
+			<li>Unlimited Books</li>
+			<li>New Books</li>
+			<li>Free Exchange and Delivery</li>
+		 </ul>
+	  </div>
+	  <br>
+	  <br>
+	   	  <div  class="container">
+		<header class="section-header">
+			<h1 style="text-align: center; font-size: 30px;color: #2A3C4A;font-weight: bolder;letter-spacing: -1px; font-family: 'Montserrat',Futura,Century Gothic,CenturyGothic,AppleGothic,sans-serif, sans-serif; color:#4CAF50">Our Happy Customers</h1>
+			<br>
+		</header>
+		<div class="row counters">
+
+			<div class="col-lg-3 col-6 text-center" style="background-color: white;">
+				<h4 style="font-size: 15px;"><b>Over</b></h4>
+				<span class="counter-up" style=" font-size:50px;"><b><font color="#FF7969">250+</font></b></span>
+				<h3 style="font-size: 16px;"><b>Satisfied Customers</b></h3>
+			</div>
+
+			<div class="col-lg-3 col-6 text-center" style="background-color: white;">
+				<h4 style="font-size: 15px;"><b>Provide More than</b></h4>
+				<span class="counter-up" style="font-size:50px;"><b><font color="#FFB96C">3000+</font></b></span>
+				<h3 style="font-size: 16px;"><b>Books</b></h3>
+			</div>
+			<br>
+			<!--
+			<div class="col-lg-3 col-6 text-center">
+				<h4 style="font-size: 15px;">RATED</h4>
+				<span class="counter-up" style="color: #8DB574">4.7</span>
+				<h3 style="font-size: 16px;">Stars Out of 5</h3>
+			</div>
+			-->
+		</div>
+	</div>
+
+	  <!-- Testimonials -->
+      <section class="wrapper">
+         <div class="inner">
+            <header class="special">
+               <br>
+               <h2>Team</h2>
+            </header>
+            <div class="testimonials">
+               <section>
+                  <div class="content">
+                     <blockquote>
+                        <p>This Is Archit, And I'll Share My Words With You Here.</p>
+                     </blockquote>
+                     <div class="author">
+                        <div class="image">
+                           <img src="archit.jpg" alt="" />
+                        </div>
+                        <p class="credit">- <strong>Archit</strong> <span>CEO - Easybooks.</span></p>
+                     </div>
+                  </div>
+               </section>
+               <section>
+                  <div class="content">
+                     <blockquote>
+                        <p>This Is Varshit, And I'll Share My Words With You Here.</p>
+                     </blockquote>
+                     <div class="author">
+                        <div class="image">
+                           <img src="varshit.jpg" alt="" />
+                        </div>
+                        <p class="credit">- <strong>Varshit</strong> <span>CEO - Easybooks.</span></p>
+                     </div>
+                  </div>
+               </section>
+               <section>
+                  <div class="content">
+                     <blockquote>
+                        <p>This Is Akshey, And I'll Share My Words With You Here.</p>
+                     </blockquote>
+                     <div class="author">
+                        <div class="image">
+                           <img src="akshey2.jpg" alt="" />
+                        </div>
+                        <p class="credit">- <strong>Akshey Arora</strong> <br><span>Web Development Head - Easybooks.</span></p>
+                     </div>
+                  </div>
+               </section>
+            </div>
+         </div>
+	  </section>
+	  <div id="contact" class="container container-padd">
+        
+        <br>
+         <h2 class="text-center">CONTACT </h2>
+		 <hr style="width: 100%; text-align: right; margin-right: 0;">
+          
+              <p>Contact us and we'll get back to you within 24 hours.</p>
+              <p><span class="glyphicon glyphicon-map-marker"></span> EasyBooks,TIET</p>
+              <p><span class="glyphicon glyphicon-phone"></span> 7417660699 || 9837910699</p>
+              <p><span class="glyphicon glyphicon-envelope"></span> easybooks999@gmail.com</p>
+			  <hr style="width: 100%; text-align: right; margin-right: 0;">
+
+			</div>
+            <br>
+
+      <br>
+      <!-- Footer -->
+      <footer class="footer footer-hover">
+         <a  href="https://www.facebook.com/EasyBooks999/">  <i class="fa fa-facebook-official ss-hover-opacity"  style="font-size:36px">  </i></a>
+         <i class="fa fa-instagram ss-hover-opacity"  style="font-size:36px;"></i>
+         <i class="fa fa-google-plus ss-hover-opacity"  style="font-size:36px"></i>
+         <a href="https://www.linkedin.com/company/easybooks-in"><i class="fa fa-linkedin ss-hover-opacity"  style="font-size:36px"></i></a>
+         <br>
+         <p class="text-center" style="font-size:12;">Copywrite@2018 EASYBOOKS  || Created by Akshey And Devansh</p>
+      </footer>
+      <script>
+         $(document).ready(function(){
+           // Add smooth scrolling to all links in navbar + footer link
+           $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+         	// Make sure this.hash has a value before overriding default behavior
+         	if (this.hash !== "") {
+         	  // Prevent default anchor click behavior
+         	  event.preventDefault();
+         
+         	  // Store hash
+         	  var hash = this.hash;
+         
+         	  // Using jQuery's animate() method to add smooth page scroll
+         	  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+         	  $('html, body').animate({
+         		scrollTop: $(hash).offset().top
+         	  }, 900, function(){
+            
+         		// Add hash (#) to URL when done scrolling (default click behavior)
+         		window.location.hash = hash;
+         	  });
+         	} // End if
+           });
+           
+           $(window).scroll(function() {
+         	$(".slideanim").each(function(){
+         	  var pos = $(this).offset().top;
+         
+         	  var winTop = $(window).scrollTop();
+         		if (pos < winTop + 600) {
+         		  $(this).addClass("slide");
+         		}
+         	});
+           });
+         })
+         
+         // Get the modal
+         var modal = document.getElementById('myModal');
+         
+         // Get the button that opens the modal
+         var btn = document.getElementById("myBtn");
+         
+         // Get the <span> element that closes the modal
+         var span = document.getElementsByClassName("close")[0];
+         
+         // When the user clicks the button, open the modal 
+         btn.onclick = function() {
+         	modal.style.display = "block";
+         }
+         
+         // When the user clicks on <span> (x), close the modal
+         span.onclick = function() {
+         	modal.style.display = "none";
+         }
+         
+         // When the user clicks anywhere outside of the modal, close it
+         window.onclick = function(event) {
+         	if (event.target == modal) {
+         		modal.style.display = "none";
+         	}
+         }	
+         
+      </script>
+      <script>
+         function display(){
+         document.getElementById('id01').style.display='block';
+         }
+           
+      </script>
+      <div class="w3-container">
+         <div id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-card-4">
+               <header class="w3-container w3-teal">
+                  <span onclick="document.getElementById('id01').style.display='none'" 
+                     class="w3-button w3-display-topright">&times;</span>
+                  <h3 style="font-style:Arial ;">Header Or Subject</h3>
+               </header>
+               <div class="w3-container">
+                  <br>
+                  <p>
+                     EasyBooks is a very humble start-up originated and operating in Thapar university, Patiala. As engineering students, we often faced difficulties arranging books to study, since money is tight when you are in hostel. hence, we came up with EasyBooks. we provide unlimited books for a semester at a very nominal membership fee of Rs. 750. currently, we have around 250 customers in our college and our looking to expand to colleges in Delhi-NCR. we are building a team of students from various colleges in Delhi-NCR who will represent EasyBooks in their respective campus. 
+                     Hoping to connect with some dynamic student who like to take initiatives.
+                     For more details contact - 9149367276
+                  </p>
+                  <!--<h3>This Is Made By Most Intelligent Akshey And Devansh,  Don't Thank Us It's Ok</h3>
+                     <h3>Chal Ab Bhaag Ja Yaha Se</h3>
+                     -->
+                  <br>
+               </div>
+               <footer class="w3-container w3-teal">
+                  <h3 style="font-style:Arial ;">Footer</h3>
+               </footer>
+            </div>
+         </div>
+      </div>
+      <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/browser.min.js"></script>
+      <script src="assets/js/breakpoints.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <script src="assets/js/main.js"></script>
+   </body>
+</html>
